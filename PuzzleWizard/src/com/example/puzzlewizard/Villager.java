@@ -152,6 +152,7 @@ public class Villager extends Activity{
 		hundred.setText(""+hundreds);
 	}
 	
+	@SuppressLint("NewApi")
 	public void Restart(View view)
 	{
 		Button restart = (Button) findViewById(R.id.restart);
@@ -182,11 +183,13 @@ public class Villager extends Activity{
 		this.hundreds = 0;
 	}
 	
+	@SuppressLint("NewApi")
 	public void submitAnswer(View view){
 		int ans = hundreds*100 + tens*10 + ones;
 		if(ans == answer)
 		{
-			//give xp at some point
+			MainActivity.user.setXP(MainActivity.user.getXP()+10);
+			MainActivity.user.setHP(MainActivity.user.getHP()+5*MainActivity.user.getLevel());
 			MainActivity.state.setState(State.Field);
 			Intent intent = new Intent(this, Screen.class);
 	    	startActivity(intent);

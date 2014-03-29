@@ -70,6 +70,10 @@ public class Screen extends Activity{
 	public void createXPBar(){
 		TextView xp = (TextView) findViewById(R.id.xp);
 		xp.invalidate();
+		if (MainActivity.user.getXP() >= MainActivity.user.getLevel()*20){
+			MainActivity.user.setXP(MainActivity.user.getXP()-MainActivity.user.getLevel()*20);
+			MainActivity.user.setLevel(MainActivity.user.getLevel()+1);
+		}
 		xp.setText("XP: " + MainActivity.user.getXP() + "/" + MainActivity.user.getLevel()*20);
 	}
 	
