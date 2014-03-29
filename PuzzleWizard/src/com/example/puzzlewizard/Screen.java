@@ -73,12 +73,12 @@ public class Screen extends Activity{
 		int maxx = size.x;
 		int maxy = size.y;
 		double x = Math.random() * maxx -75;
-		if (x < 5){
-			x = 5;
+		if (x < 20){
+			x = 20;
 		}
 		double y = Math.random() * maxy - 100;
-		if (y < 10){
-			y = 10;
+		if (y < 50){
+			y = 50;
 		}
 		//monster.draw(x,y);
 		
