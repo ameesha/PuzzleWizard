@@ -55,8 +55,8 @@ public class Fight extends Activity{
 		TextView xp = (TextView) findViewById(R.id.xp);
 		xp.invalidate();
 		if (MainActivity.user.getXP() >= MainActivity.user.getLevel()*20){
-			MainActivity.user.setLevel(MainActivity.user.getLevel()+1);
 			MainActivity.user.setXP(MainActivity.user.getXP()-MainActivity.user.getLevel()*20);
+			MainActivity.user.setLevel(MainActivity.user.getLevel()+1);
 		}
 		xp.setText("XP: " + MainActivity.user.getXP() + "/" + MainActivity.user.getLevel()*20);
 	}
@@ -101,7 +101,7 @@ public class Fight extends Activity{
 				}
 				ibutton.setX((float)x);
 				ibutton.setY((float)y);
-				ibutton.setVisibility(1);
+				ibutton.setVisibility(View.VISIBLE);
 				ibutton.setEnabled(true);
 				ImageButton ibutton2 = (ImageButton) findViewById(R.id.monster2);
 				ImageButton ibutton3 = (ImageButton) findViewById(R.id.monster3);
@@ -112,6 +112,7 @@ public class Fight extends Activity{
 				
 				Monster monster = new Monster();
 				monster.setHP(5 * MainActivity.user.getLevel());
+				monster.setDamage(2 *MainActivity.user.getLevel());
 				MainActivity.model.addMonster(monster);
 				
 			}
@@ -180,6 +181,7 @@ public class Fight extends Activity{
 				
 				Monster monster = new Monster();
 				monster.setHP(5 * MainActivity.user.getLevel());
+				monster.setDamage(2 *MainActivity.user.getLevel());
 				MainActivity.model.addMonster(monster);
 			}
 		}

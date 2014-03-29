@@ -38,7 +38,7 @@ public class Monster {
 	
 	public void setDamage(int damage)
 	{
-		this.HP = damage;
+		this.Damage = damage;
 	}
 	
 	public int getDamage()

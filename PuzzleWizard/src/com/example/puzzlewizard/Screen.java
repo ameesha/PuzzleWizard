@@ -52,6 +52,9 @@ public class Screen extends Activity{
 			ImageButton ibutton2 = (ImageButton) findViewById(R.id.person);
 			ibutton2.setEnabled(true);
 		}
+		createHPBar();
+		createXPBar();
+		createPowers();
 	}
 	
 	public void createHPBar(){
