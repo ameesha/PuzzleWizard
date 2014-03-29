@@ -3,18 +3,21 @@ package com.example.puzzlewizard;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import com.example.puzzlewizard.StateMachine.State;
+import com.example.puzzlewizard.User.Spell;
+
 public class Model {
 
-	private Vector<ModelListener> views = new Vector();
-	private enum State {Field, Fight, Villager};
-	private State state = State.Field;
+//	private Vector<ModelListener> views = new Vector();
+//	private State state = State.Field;
 	User user = null;
 	private ArrayList<Monster> monsters = new ArrayList();
+	StateMachine stateMachine = null;
 	//add array of people later
 	
 	Model(){
 		monsters.clear();
-		views.clear();
+	//	views.clear();
 	}
 	
 	public void setUser(User use)
@@ -22,17 +25,22 @@ public class Model {
 		this.user = use;
 	}
 	
-	public void addObserver(ModelListener View)
+	public void setMachine(StateMachine machine)
+	{
+		this.stateMachine = machine;
+	}
+	
+/*	public void addObserver(ModelListener View)
 	{
 		views.add(View);
 	}
-	
+	*/
 	public void addMonster(Monster monster)
 	{
 		this.monsters.add(monster);
 	}
 	
-	public void notifyObservers(){
+/*	public void notifyObservers(){
 		for(ModelListener v : views){
 			v.update();
 		}
@@ -41,7 +49,7 @@ public class Model {
 	public State getState()
 	{
 		return this.state;
-	}
+	}*/
 	
 	public void UpdateUser(){
 		if(user.getLevel() * 20 <= user.getXP())
@@ -54,13 +62,13 @@ public class Model {
 	
 	public void UpdateMonster(Monster monster){
 	
-		if(state == State.Field)
+		if(stateMachine.getState() == State.Field)
 		{
-			state = state.Fight;
-			this.notifyObservers();
+			stateMachine.setState(State.Fight);
 		}
-		else if(state == State.Fight)
+		else if(stateMachine.getState() == State.Fight)
 		{
+			Spell spell = user.getCurrentSpell();
 			//grab spell from user
 			//check if monster is immune to it-->if so, make damage = 0
 			//check if monster is weak to it-->if so, damage doubles
@@ -69,20 +77,20 @@ public class Model {
 			if(monster.getHP() <= 0)
 			{
 				monsters.remove(monster);
-				if(monsters.isEmpty())
-				{
-					state = state.Field;
-				}
 				int xp = user.getXP();
 				user.setXP(xp + monster.getXP());
 				UpdateUser();
+				if(monsters.isEmpty())
+				{
+					stateMachine.setState(State.Field);
+				}
 			}
 			else
 			{
 				hp = user.getHP();
 				user.setHP(hp - monster.getDamage());
 			}
-			this.notifyObservers();
 		}
+//		this.notifyObservers();
 	}
 }
