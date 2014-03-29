@@ -96,8 +96,7 @@ public class Villager extends Activity{
 	}
 	
 	public void createQuestion(){
-			String newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
-			answer = 1;
+			String newText = "";
 			double x = Math.random() * 5;
 			int val = (int) x;
 			switch(val)
@@ -123,7 +122,7 @@ public class Villager extends Activity{
 				answer = 20;
 				break;
 			default:
-				newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
+				newText = "There are 3 switches for 3 light bulbs upstairs. How many times do you need to look to figure which switch is with which bulb?";
 				answer = 1;
 			}
 			
@@ -199,7 +198,7 @@ public class Villager extends Activity{
 			Button restart = (Button) findViewById(R.id.restart);
 			restart.setText("I'll get it this time.");
 			restart.setVisibility(view.VISIBLE);
-			restart.setY(200);
+			restart.setY(100);
 		}
 	}
 	
