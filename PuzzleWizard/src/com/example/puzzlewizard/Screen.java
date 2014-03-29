@@ -51,6 +51,8 @@ public class Screen extends Activity{
 			ibutton.setVisibility(View.GONE);
 			ImageButton ibutton2 = (ImageButton) findViewById(R.id.person);
 			ibutton2.setEnabled(true);
+			
+			MainActivity.model.monsters.clear();
 		}
 		createHPBar();
 		createXPBar();
