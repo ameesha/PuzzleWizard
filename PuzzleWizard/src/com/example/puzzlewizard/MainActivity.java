@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
     	state.setState(State.Instructions);
     	Intent intent = new Intent(this, Instructions.class);
     	startActivity(intent);
+    	finish();
     }
     
 }

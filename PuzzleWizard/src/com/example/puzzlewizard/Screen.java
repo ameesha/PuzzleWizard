@@ -48,7 +48,7 @@ public class Screen extends Activity{
 		super.onResume();
 		if (MainActivity.state.getState() == State.PostFight){
 			ImageButton ibutton = (ImageButton) findViewById(R.id.monster);
-			ibutton.setVisibility(0);
+			ibutton.setVisibility(View.GONE);
 			ImageButton ibutton2 = (ImageButton) findViewById(R.id.person);
 			ibutton2.setEnabled(true);
 		}
@@ -135,8 +135,8 @@ public class Screen extends Activity{
 		ImageButton ibutton = (ImageButton) findViewById(R.id.person);
 		ibutton.setX((float) x);
 		ibutton.setY((float) y);
-	//	if (MainActivity.state.getState() == State.Field)
-		//	ibutton.setEnabled(false);
+		if (MainActivity.state.getState() == State.Field)
+			ibutton.setEnabled(false);
 /*		ImageView image = (ImageView) findViewById(R.id.person);
 		image.setX((float) x);
 		image.setY((float) y);

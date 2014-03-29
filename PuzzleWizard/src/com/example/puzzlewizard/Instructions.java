@@ -28,6 +28,7 @@ public class Instructions extends Activity {
 		MainActivity.state.setState(State.Field);
 		Intent intent = new Intent(this, Screen.class);
 		startActivity(intent);
+		finish();
 	}
 
 }

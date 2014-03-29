@@ -5,6 +5,7 @@ import com.example.puzzlewizard.StateMachine.State;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.view.MotionEventCompat;
 import android.view.Menu;
@@ -33,13 +34,16 @@ public class Villager extends Activity{
 		return true;
 	}
 	
+	@SuppressLint("NewApi")
 	public void createConvoStart(){
 		TextView start = (TextView) findViewById(R.id.maintext);
 		start.setText("Wizard, could you help me solve this question?");
 		Button yes = (Button) findViewById(R.id.yes_button);
 		yes.setText("Only if you pay me.");
+		yes.setY(100);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I'm too busy for this. Figure it out yourself.");
+		no.setY(200);
 	}
 	
 	public void endPuzzle(View view){
@@ -48,29 +52,20 @@ public class Villager extends Activity{
     	startActivity(intent);
 	}
 	
-	public void startPuzzle(View view){
-		Button c = new Button(this);
-		c.setText("C");
-		c.setVisibility(1);
-		RelativeLayout ll = (RelativeLayout)findViewById(R.id.puzzle_layout);
-		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		ll.addView(c, lp);
-		
-		Button r = new Button(this);
-		r.setText("R");
-		r.setVisibility(1);
-		ll.addView(r, lp);    	
+	@SuppressLint("NewApi")
+	public void beginPuzzle(View view){
+		createQuestion();
+		Button yes = (Button) findViewById(R.id.yes_button);
+		yes.setVisibility(0);
+		Button no = (Button) findViewById(R.id.no_button);
+		no.setVisibility(1);
 	}
 	
 	public void createQuestion(){
 		TextView start = (TextView) findViewById(R.id.maintext);
 		start.invalidate();
 		start.setText("What can one not keep, two hold, and three destroy? (2 words)");
-		Button yes = (Button) findViewById(R.id.yes_button);
-		yes.setVisibility(0);
-		Button no = (Button) findViewById(R.id.no_button);
-		no.setVisibility(0);
-		
+			
 	}
 	
 }

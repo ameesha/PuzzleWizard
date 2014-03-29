@@ -8,6 +8,7 @@ public class User{
 	private int HP = 20;
 	private int XP = 0;
 	private int Level = 1;
+	public int damage = 3;
 	//private int XPtoLevel = 0;
 	public enum Spell {Lightning, Water, Fire, Air, Something};
 	private Spell currentSpell = Spell.Lightning;
