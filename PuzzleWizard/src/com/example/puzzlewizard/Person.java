@@ -29,7 +29,7 @@ public class Person extends Activity{
 		{
 		case (MotionEvent.ACTION_DOWN) :
 		case(MotionEvent.ACTION_MOVE):
-			model.UpdatePerson();
+			//model.UpdatePerson();
 			return true;
 		default :
 			return true;

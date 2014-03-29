@@ -73,13 +73,24 @@ public class Screen extends Activity{
 		int maxx = size.x;
 		int maxy = size.y;
 		double x = Math.random() * maxx -75;
-		if (x < 20){
-			x = 20;
-		}
 		double y = Math.random() * maxy - 100;
+		if (y > 350){
+			y = 350;
+		}
 		if (y < 50){
 			y = 50;
 		}
+		
+		if (x > 950){
+			x = 950;
+		}
+		if (x < 200){
+			x = 200;
+		}
+		if (x >= 600 && x <= 800 && y <= 400 && y >= 300){
+			y = 250;
+		}
+		System.out.println("x " +x + " y " +y);
 		//monster.draw(x,y);
 		
 		ImageView image = (ImageView) findViewById(R.id.monster1);
