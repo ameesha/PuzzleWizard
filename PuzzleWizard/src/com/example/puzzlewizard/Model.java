@@ -6,7 +6,10 @@ import java.util.Vector;
 import com.example.puzzlewizard.StateMachine.State;
 import com.example.puzzlewizard.User.Spell;
 
-public class Model {
+import java.io.Serializable;
+
+public class Model implements Serializable {
+//public class Model{
 
 //	private Vector<ModelListener> views = new Vector();
 //	private State state = State.Field;

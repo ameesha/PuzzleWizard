@@ -25,5 +25,12 @@
         android:textSize="20dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />
-        
+    
+ <!--    <ImageView android:id="@+id/monster1" />
+   <ImageView android:id="@+id/monster2" />
+    <ImageView android:id="@+id/monster3" />
+    <ImageView android:id="@+id/monster4" />
+    <ImageView android:id="@+id/monster5" />
+    <ImageView android:id="@+id/monster6" />
+    <ImageView android:id="@+id/monster7" />   --> 
 </RelativeLayout>

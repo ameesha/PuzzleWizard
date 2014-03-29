@@ -2,6 +2,13 @@ package com.example.puzzlewizard;
 
 import java.util.ArrayList;
 
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 public class Monster {
 	private int HP = 0;
 	private int Damage = 0;
@@ -14,6 +21,15 @@ public class Monster {
 	{
 		immunity.clear();
 		weakness.clear();
+	}
+	
+	public static ShapeDrawable draw(double x, double y){
+		ShapeDrawable shape = new ShapeDrawable(new OvalShape());
+		shape.setBounds((int)x,(int)y,20,20);
+		shape.setIntrinsicHeight(20);
+		shape.setIntrinsicWidth(30);
+		shape.getPaint().setColor(Color.RED);
+		return shape;
 	}
 	
 	public void setHP(int hp)

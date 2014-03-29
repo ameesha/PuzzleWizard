@@ -1,13 +1,15 @@
 package com.example.puzzlewizard;
 
 import java.util.ArrayList;
+//import java.io.Serializable;
 
-public class User {
+//public class User implements Serializable{
+public class User{
 	private int HP = 20;
 	private int XP = 0;
 	private int Level = 1;
 	//private int XPtoLevel = 0;
-	private enum Spell {Lightning, Water, Fire, Air, Something};
+	public enum Spell {Lightning, Water, Fire, Air, Something};
 	private Spell currentSpell = Spell.Lightning;
 	private ArrayList<Spell> spells = new ArrayList();
 	private enum Equipment {Shield, Sword, Something};

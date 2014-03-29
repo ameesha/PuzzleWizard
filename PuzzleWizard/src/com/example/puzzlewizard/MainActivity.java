@@ -7,11 +7,16 @@ import android.view.Menu;
 import android.view.View;
 
 public class MainActivity extends Activity {
+	
+	public static Model model;
+	public static User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        model = new Model();
+        user = new User();
     }
 
 
@@ -24,6 +29,8 @@ public class MainActivity extends Activity {
     
     public void startGame(View view){
     	Intent intent = new Intent(this, Instructions.class);
+    	//intent.putExtra("model", model);
+    	//intent.putExtra("user", user);
     	startActivity(intent);
     }
     
