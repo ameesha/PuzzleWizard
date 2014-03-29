@@ -24,6 +24,44 @@
         android:enabled="true"
         android:gravity="center"
          android:onClick="endPuzzle"  />
+    
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+        android:onClick="submitAnswer" />
+
+    <Button
+        android:id="@+id/ones_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="addOnes"  />
+    <Button
+        android:id="@+id/tens_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="addTens"  />
+    <Button
+        android:id="@+id/hundreds_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="addHundreds"  />
 
     <TextView
         android:id="@+id/maintext"

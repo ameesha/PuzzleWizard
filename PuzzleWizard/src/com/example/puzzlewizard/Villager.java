@@ -21,6 +21,11 @@ import android.view.ViewGroup.LayoutParams;
 
 public class Villager extends Activity{
 	
+	private int tens = 0;
+	private int ones = 0;
+	private int hundreds = 0;
+	private int answer = -1;
+	
 	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,18 +59,104 @@ public class Villager extends Activity{
 	
 	@SuppressLint("NewApi")
 	public void beginPuzzle(View view){
-		createQuestion();
+		this.createQuestion();
 		Button yes = (Button) findViewById(R.id.yes_button);
-		yes.setVisibility(0);
+		yes.setVisibility(view.INVISIBLE);
+		Button submit = (Button) findViewById(R.id.submit);
+		submit.setText("My answer is perfect.");
+		submit.setY(100);
+		submit.setVisibility(view.VISIBLE);
 		Button no = (Button) findViewById(R.id.no_button);
-		no.setVisibility(1);
+		no.setText("I don't have a clue.");
+		Button ones = (Button) findViewById(R.id.ones_button);
+		ones.setY(100);
+		ones.setX(100);
+		ones.setText("0");
+		Button tens = (Button) findViewById(R.id.tens_button);
+		tens.setY(100);
+		tens.setX(150);
+		tens.setText("0");
+		Button hundreds = (Button) findViewById(R.id.hundreds_button);
+		hundreds.setY(100);
+		hundreds.setX(200);
+		tens.setText("0");
 	}
 	
-	public void createQuestion(){
-		TextView start = (TextView) findViewById(R.id.maintext);
-		start.invalidate();
-		start.setText("What can one not keep, two hold, and three destroy? (2 words)");
+	private void createQuestion(){
+		if(this.answer != -1)
+		{
+			TextView start = (TextView) findViewById(R.id.maintext);
+			start.invalidate();
+			string newText = "";
+			double x = Math.random() * 5;
+			int val = (int) x;
+			switch(val)
+			{
+			case 1:
+				newText = "A man finds  small iron coin dated 154 B.C What's it worth?";
+				answer = 0;
+				break;
+			case 2:
+				newText = "How many letters are in the alphabet?";
+				answer = 11;
+				break;
+			case 3:
+				newText = "You have a cube made of 10x10x10 smaller cubes, for a total of 1000 smaller cubes. If you take off 1 layer of cubes, how many will remain?";
+				answer = 512;
+				break;
+			case 4:
+				newText = "What number do you get when you multiply all the numbers on a telephone pad?";
+				answer = 0;
+				break;
+			case 5:
+				newText = "John has been hired to paint the numbers 1 through 100 on 100 apartments. How many times will he paint 8?";
+				answer = 20;
+				break;
+			default:
+				newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
+				answer = 1;
+			}
 			
+			start.setText(newText);
+		}
+			
+	}
+	
+	public void addOnes(View view){
+		this.ones++;
+		Button one = (Button) findViewById(R.id.ones_button);
+		one.setText(""+ones);
+	}
+	
+	public void addTens(View view){
+		this.tens++;
+		Button ten = (Button) findViewById(R.id.tens_button);
+		ten.setText(""+tens);
+	}
+	
+	public void addHundreds(View view){
+		this.hundreds++;
+		Button hundred = (Button) findViewById(R.id.hundreds_button);
+		hundred.setText(""+hundreds);
+	}
+	
+	public void submitAnswer(View view){
+		int ans = hundreds*100 + tens*10 + ones;
+		if(ans == answer)
+		{
+			//give xp at some point
+			MainActivity.state.setState(State.Field);
+			Intent intent = new Intent(this, Screen.class);
+	    	startActivity(intent);
+		}
+		else
+		{
+			Button submit = (Button) findViewById(R.id.submit);
+			submit.setVisibility(view.INVISIBLE);
+			Button yes = (Button) findViewById(R.id.yes_button);
+			yes.setText("I'll get it this time.");
+			yes.setVisibility(view.VISIBLE);
+		}
 	}
 	
 }
