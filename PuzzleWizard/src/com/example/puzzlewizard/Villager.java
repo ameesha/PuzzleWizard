@@ -57,6 +57,8 @@ public class Villager extends Activity{
 		hundred.setVisibility(View.INVISIBLE);
 		Button submit = (Button) findViewById(R.id.submit);
 		submit.setVisibility(View.INVISIBLE);
+		Button restart = (Button) findViewById(R.id.restart);
+		restart.setVisibility(View.INVISIBLE);
 	}
 	
 	public void endPuzzle(View view){
@@ -94,8 +96,6 @@ public class Villager extends Activity{
 	}
 	
 	public void createQuestion(){
-		if(this.answer == -1)
-		{
 			String newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
 			answer = 1;
 			double x = Math.random() * 5;
@@ -130,38 +130,57 @@ public class Villager extends Activity{
 			TextView start = (TextView) findViewById(R.id.maintext);
 			start.invalidate();
 			start.setText(newText);
-		}
-		else if(answer != 1)
-		{
-			TextView start = (TextView) findViewById(R.id.maintext);
-			start.invalidate();
-			start.setText("so you aren't -1? " + answer);
-		}
-		else
-		{
-			TextView start = (TextView) findViewById(R.id.maintext);
-			start.invalidate();
-			start.setText("why are you not a question?" + answer);
-		}
-			
 	}
 	
 	public void addOnes(View view){
-		this.ones++;
+		if(this.ones < 10)
+			this.ones++;
 		Button one = (Button) findViewById(R.id.ones_button);
 		one.setText(""+ones);
 	}
 	
 	public void addTens(View view){
-		this.tens++;
+		if(this.tens < 10)
+			this.tens++;
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setText(""+tens);
 	}
 	
 	public void addHundreds(View view){
-		this.hundreds++;
+		if(this.tens < 10)
+			this.hundreds++;
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setText(""+hundreds);
+	}
+	
+	public void Restart(View view)
+	{
+		Button restart = (Button) findViewById(R.id.restart);
+		restart.setVisibility(View.INVISIBLE);
+		Button submit = (Button) findViewById(R.id.submit);
+		submit.setText("My answer is perfect.");
+		submit.setY(100);
+		submit.setVisibility(View.VISIBLE);
+		Button no = (Button) findViewById(R.id.no_button);
+		no.setText("I don't have a clue.");
+		Button one = (Button) findViewById(R.id.ones_button);
+		one.setY(100);
+		one.setX(300);
+		one.setText("0");
+		Button ten = (Button) findViewById(R.id.tens_button);
+		ten.setY(100);
+		ten.setX(400);
+		ten.setText("0");
+		Button hundred = (Button) findViewById(R.id.hundreds_button);
+		hundred.setY(100);
+		hundred.setX(500);
+		hundred.setText("0");
+		one.setVisibility(View.VISIBLE);
+		ten.setVisibility(View.VISIBLE);
+		hundred.setVisibility(View.VISIBLE);
+		this.tens = 0;
+		this.ones = 0;
+		this.hundreds = 0;
 	}
 	
 	public void submitAnswer(View view){
@@ -177,9 +196,9 @@ public class Villager extends Activity{
 		{
 			Button submit = (Button) findViewById(R.id.submit);
 			submit.setVisibility(view.INVISIBLE);
-			Button yes = (Button) findViewById(R.id.yes_button);
-			yes.setText("I'll get it this time.");
-			yes.setVisibility(view.VISIBLE);
+			Button restart = (Button) findViewById(R.id.restart);
+			restart.setText("I'll get it this time.");
+			restart.setVisibility(view.VISIBLE);
 		}
 	}
 	
