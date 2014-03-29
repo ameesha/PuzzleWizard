@@ -49,7 +49,11 @@ public class Fight extends Activity{
 	public void createHPBar(){
 		TextView hp = (TextView) findViewById(R.id.hp);
 		hp.invalidate();
-		hp.setText("HP: " + MainActivity.user.getHP());
+		if (MainActivity.user.getHP() < 0){
+			hp.setText("HP: 0");
+		}
+		else
+			hp.setText("HP: " + MainActivity.user.getHP());
 		
 		if (MainActivity.user.getHP() <= 0){
 			Intent intent = new Intent(this, GameOver.class);
@@ -124,8 +128,8 @@ public class Fight extends Activity{
 				ibutton3.setEnabled(false);
 				
 				Monster monster = new Monster();
-				monster.setHP(5 * MainActivity.user.getLevel());
-				monster.setDamage(2 *MainActivity.user.getLevel());
+				monster.setHP(5 + MainActivity.user.getLevel());
+				monster.setDamage(MainActivity.user.getLevel()+1);
 				MainActivity.model.addMonster(monster);
 				
 			}
@@ -159,8 +163,8 @@ public class Fight extends Activity{
 				ibutton.setEnabled(true);
 				
 				Monster monster = new Monster();
-				monster.setHP(5 * MainActivity.user.getLevel());
-				monster.setDamage(2 *MainActivity.user.getLevel());
+				monster.setHP(5 + MainActivity.user.getLevel());
+				monster.setDamage(MainActivity.user.getLevel()+1);
 				MainActivity.model.addMonster(monster);
 			}
 			else{
@@ -193,8 +197,8 @@ public class Fight extends Activity{
 				ibutton.setEnabled(true);
 				
 				Monster monster = new Monster();
-				monster.setHP(5 * MainActivity.user.getLevel());
-				monster.setDamage(2 *MainActivity.user.getLevel());
+				monster.setHP(5 + MainActivity.user.getLevel());
+				monster.setDamage(MainActivity.user.getLevel()+1);
 				MainActivity.model.addMonster(monster);
 			}
 		}
@@ -259,14 +263,14 @@ public class Fight extends Activity{
 			final RelativeLayout rel = (RelativeLayout) findViewById(R.id.fight_layout);
 			rel.setBackground(getResources().getDrawable(R.drawable.fight_lightning));
 			
-			/*new CountDownTimer(1000,1000){
+			new CountDownTimer(1000,1000){
 				public void onFinish(){
-					rel.setBackground(getResources().getDrawable(R.drawable.fight_background));
+					//rel.setBackground(getResources().getDrawable(R.drawable.fight_background));
 				}
 				@Override
 				public void onTick(long arg0) {
 				}
-			}.start();*/
+			}.start();
 			
 			MainActivity.model.monsters.get(1).setHP(MainActivity.model.monsters.get(1).getHP() - MainActivity.user.damage);
 			if (MainActivity.model.monsters.get(1).getHP() <= 0){

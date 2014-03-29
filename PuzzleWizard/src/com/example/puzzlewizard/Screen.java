@@ -64,7 +64,11 @@ public class Screen extends Activity{
 	public void createHPBar(){
 		TextView hp = (TextView) findViewById(R.id.hp);
 		hp.invalidate();
-		hp.setText("HP: " + MainActivity.user.getHP());
+		if (MainActivity.user.getHP() < 0){
+			hp.setText("HP: 0");
+		}
+		else
+			hp.setText("HP: " + MainActivity.user.getHP());
 	}
 	
 	public void createXPBar(){
