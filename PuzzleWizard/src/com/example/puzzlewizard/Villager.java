@@ -80,15 +80,15 @@ public class Villager extends Activity{
 		no.setText("I don't have a clue.");
 		Button one = (Button) findViewById(R.id.ones_button);
 		one.setY(100);
-		one.setX(700);
+		one.setX(900);
 		one.setText("0");
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setY(100);
-		ten.setX(550);
+		ten.setX(700);
 		ten.setText("0");
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setY(100);
-		hundred.setX(400);
+		hundred.setX(500);
 		hundred.setText("0");
 		one.setVisibility(View.VISIBLE);
 		ten.setVisibility(View.VISIBLE);
@@ -199,6 +199,7 @@ public class Villager extends Activity{
 			Button restart = (Button) findViewById(R.id.restart);
 			restart.setText("I'll get it this time.");
 			restart.setVisibility(view.VISIBLE);
+			restart.setY(100);
 		}
 	}
 	
