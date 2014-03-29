@@ -246,16 +246,24 @@ public class Villager extends Activity{
 			Button restart = (Button) findViewById(R.id.restart);
 			restart.setText("I'll get it this time.");
 			restart.setVisibility(view.VISIBLE);
-			restart.setY(100);
-			Button one = (Button) findViewById(R.id.ones_button);
-			one.setText("0");
-			Button ten = (Button) findViewById(R.id.tens_button);
-			ten.setText("0");
-			Button hundred = (Button) findViewById(R.id.hundreds_button);
-			hundred.setText("0");
 			this.tens = 0;
 			this.ones = 0;
 			this.hundreds = 0;
+			Button one = (Button) findViewById(R.id.ones_button);
+			one.setY(200);
+			one.setX(900);
+			one.setText("0");
+			Button ten = (Button) findViewById(R.id.tens_button);
+			ten.setY(200);
+			ten.setX(700);
+			ten.setText("0");
+			Button hundred = (Button) findViewById(R.id.hundreds_button);
+			hundred.setY(200);
+			hundred.setX(500);
+			hundred.setText("0");
+			one.setVisibility(View.VISIBLE);
+			ten.setVisibility(View.VISIBLE);
+			hundred.setVisibility(View.VISIBLE);
 		}
 	}
 	
