@@ -49,6 +49,12 @@ public class Fight extends Activity{
 		TextView hp = (TextView) findViewById(R.id.hp);
 		hp.invalidate();
 		hp.setText("HP: " + MainActivity.user.getHP());
+		
+		if (MainActivity.user.getHP() <= 0){
+			Intent intent = new Intent(this, GameOver.class);
+			startActivity(intent);
+			finish();
+		}
 	}
 	
 	public void createXPBar(){

@@ -40,6 +40,10 @@
             android:name="com.example.puzzlewizard.Villager"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name="com.example.puzzlewizard.GameOver"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>
