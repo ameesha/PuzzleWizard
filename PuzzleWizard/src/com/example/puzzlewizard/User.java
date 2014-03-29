@@ -3,11 +3,12 @@ package com.example.puzzlewizard;
 import java.util.ArrayList;
 
 public class User {
-	private int HP = 0;
+	private int HP = 20;
 	private int XP = 0;
-	private int Level = 0;
-	private int XPtoLevel = 0;
+	private int Level = 1;
+	//private int XPtoLevel = 0;
 	private enum Spell {Lightning, Water, Fire, Air, Something};
+	private Spell currentSpell = Spell.Lightning;
 	private ArrayList<Spell> spells = new ArrayList();
 	private enum Equipment {Shield, Sword, Something};
 	private ArrayList<Equipment> equipment = new ArrayList();
@@ -43,10 +44,10 @@ public class User {
 		return this.Level;
 	}
 	
-	public int getXPtoLevel()
+	/*public int getXPtoLevel()
 	{
 		return this.XPtoLevel;
-	}
+	}*/
 
 	public void setSpells(Spell spell)
 	{
@@ -73,10 +74,16 @@ public class User {
 		this.Level = level;
 	}
 	
-	public void setXPtoLevel(int xp)
+	/*public void setXPtoLevel(int xp)
 	{
 		this.XPtoLevel = xp;
+	}*/
+	
+	public void setCurrentSpell(Spell spell){
+		this.currentSpell = spell;
 	}
 	
-	
+	public Spell getCurrentSpell(){
+		return this.currentSpell;
+	}
 }

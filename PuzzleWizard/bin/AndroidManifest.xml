@@ -15,12 +15,21 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.puzzlewizard.MainActivity"
+            android:screenOrientation="landscape"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.puzzlewizard.Instructions"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.puzzlewizard.Screen"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 
