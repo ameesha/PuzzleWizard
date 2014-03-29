@@ -49,6 +49,12 @@ public class Villager extends Activity{
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I'm too busy for this. Figure it out yourself.");
 		no.setY(200);
+		Button one = (Button) findViewById(R.id.ones_button);
+		one.setVisibility(View.INVISIBLE);
+		Button ten = (Button) findViewById(R.id.tens_button);
+		ten.setVisibility(View.INVISIBLE);
+		Button hundred = (Button) findViewById(R.id.hundreds_button);
+		hundred.setVisibility(View.INVISIBLE);
 	}
 	
 	public void endPuzzle(View view){
@@ -68,26 +74,24 @@ public class Villager extends Activity{
 		submit.setVisibility(view.VISIBLE);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I don't have a clue.");
-		Button ones = (Button) findViewById(R.id.ones_button);
-		ones.setY(100);
-		ones.setX(100);
-		ones.setText("0");
-		Button tens = (Button) findViewById(R.id.tens_button);
-		tens.setY(100);
-		tens.setX(150);
-		tens.setText("0");
-		Button hundreds = (Button) findViewById(R.id.hundreds_button);
-		hundreds.setY(100);
-		hundreds.setX(200);
-		tens.setText("0");
+		Button one = (Button) findViewById(R.id.ones_button);
+		one.setY(100);
+		one.setX(400);
+		one.setText("0");
+		Button ten = (Button) findViewById(R.id.tens_button);
+		ten.setY(100);
+		ten.setX(450);
+		ten.setText("0");
+		Button hundred = (Button) findViewById(R.id.hundreds_button);
+		hundred.setY(100);
+		hundred.setX(500);
+		hundred.setText("0");
 	}
 	
 	private void createQuestion(){
 		if(this.answer != -1)
 		{
-			TextView start = (TextView) findViewById(R.id.maintext);
-			start.invalidate();
-			string newText = "";
+			String newText = "";
 			double x = Math.random() * 5;
 			int val = (int) x;
 			switch(val)
@@ -117,6 +121,8 @@ public class Villager extends Activity{
 				answer = 1;
 			}
 			
+			TextView start = (TextView) findViewById(R.id.maintext);
+			start.invalidate();
 			start.setText(newText);
 		}
 			
