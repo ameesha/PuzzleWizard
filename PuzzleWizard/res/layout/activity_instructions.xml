@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A long time ago, in a galaxy right here, a young wizard went on a great quest to find the greatest magic of all. The legend was known all around, the whispers forever heard, but alas, no one had ever found it before. Our young wizard, spent his whole life (well from the  moment he heard about it) searching for it, and narrowed it down dark in the monsters' forest.  His quest was not safe, he had a lot to learn before he could wield the true magic. 
+        
+        
+        
+        Select magic powers, on the side and click on enemies to enter the battle. More instructions are
+        soon to follow. If you see a friend, don't forget to say hi, you'll gain something when you help 
+        others - yay morality!" />
+    
+     
+     <Button android:id="@+id/understood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I Understand"
+        android:onClick="beginGame"	/>
+
+</LinearLayout>
