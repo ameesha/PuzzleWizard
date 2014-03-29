@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageButton;
 
-public class Fight extends Activity{	
+public class Fight extends Overview{	
 	
 	int numEnemies;
 	@SuppressLint("NewApi")
@@ -67,7 +67,9 @@ public class Fight extends Activity{
 				ibutton3.setEnabled(false);
 				
 				Monster monster = new Monster();
+				monster.setHP(5 * MainActivity.user.getLevel());
 				MainActivity.model.addMonster(monster);
+				
 			}
 			else if (i == 2){
 				ImageButton ibutton = (ImageButton) findViewById(R.id.monster2);
@@ -99,6 +101,8 @@ public class Fight extends Activity{
 				ibutton.setEnabled(true);
 				
 				Monster monster = new Monster();
+				monster.setHP(5 * MainActivity.user.getLevel());
+				monster.setDamage(2 *MainActivity.user.getLevel());
 				MainActivity.model.addMonster(monster);
 			}
 			else{
@@ -131,10 +135,13 @@ public class Fight extends Activity{
 				ibutton.setEnabled(true);
 				
 				Monster monster = new Monster();
+				monster.setHP(5 * MainActivity.user.getLevel());
 				MainActivity.model.addMonster(monster);
 			}
 		}
 	}
 	
-	
+	public void kill1(){
+	//	MainActivity.model.
+	}
 }

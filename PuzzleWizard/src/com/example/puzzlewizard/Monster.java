@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Monster {
 	private int HP = 0;
-	private int Damage = 0;
+	private int Damage = 2;
 	private int XP = 5;
 	private enum Spell {Lightning, Water, Fire, Air, Something};
 	private ArrayList<Spell> immunity = new ArrayList();

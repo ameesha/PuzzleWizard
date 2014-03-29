@@ -14,7 +14,7 @@ public class Model implements Serializable {
 //	private Vector<ModelListener> views = new Vector();
 //	private State state = State.Field;
 	User user = null;
-	private ArrayList<Monster> monsters = new ArrayList();
+	public ArrayList<Monster> monsters = new ArrayList();
 	private boolean person;
 	StateMachine stateMachine = null;
 	//add array of people later

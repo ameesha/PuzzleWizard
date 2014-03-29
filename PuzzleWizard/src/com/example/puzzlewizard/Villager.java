@@ -14,9 +14,8 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
-public class Villager  extends Activity{
+public class Villager extends Activity{
 	
-	User user = new User();
 	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,7 +53,7 @@ public class Villager  extends Activity{
 			Button c = new Button(this);
 			c.setText("C");
 			c.setVisibility(1);
-			LinearLayout ll = (LinearLayout)findViewById(R.id.layout);
+			LinearLayout ll = (LinearLayout)findViewById(R.id.puzzle_layout);
 			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 			ll.addView(c, lp);
 			

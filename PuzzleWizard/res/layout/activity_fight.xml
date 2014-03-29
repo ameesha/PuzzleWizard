@@ -16,13 +16,15 @@
         android:layout_width="80dp"
         android:layout_height="90dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/monster_ameesha" />
+        android:src="@drawable/monster_ameesha" 
+        android:onClick="kill2" />
     
     <ImageButton android:id="@+id/monster3"
         android:layout_width="80dp"
         android:layout_height="90dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/monster_ameesha" />
+        android:src="@drawable/monster_ameesha"
+		android:onClick="kill3" />
     
 
 </RelativeLayout>
