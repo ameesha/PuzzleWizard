@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.v4.view.MotionEventCompat;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 
 public class Villager  extends Activity{
 	
@@ -33,7 +35,7 @@ public class Villager  extends Activity{
 		start.setText("Wizard, could you help me solve this question?");
 		Button yes = (Button) findViewById(R.id.yes_button);
 		yes.setText("Only if you pay me.");
-	//	yes.setOnTouchListener((OnTouchListener) this);
+		yes.setOnTouchListener((OnTouchListener) this);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I'm too busy for this. Figure it out yourself.");
 	}
@@ -41,7 +43,7 @@ public class Villager  extends Activity{
 	//this can be done in model, possibly
 	//if yes is clicked, stay here
 	//if no is clicked leave
-	/*public boolean onTouchEvent(MotionEvent event)
+	public boolean onTouchEvent(MotionEvent event)
 	{
 		int action = MotionEventCompat.getActionMasked(event);
 		
@@ -51,12 +53,20 @@ public class Villager  extends Activity{
 		case (MotionEvent.ACTION_DOWN) :
 			Button c = new Button(this);
 			c.setText("C");
+			c.setVisibility(1);
+			LinearLayout ll = (LinearLayout)findViewById(R.id.layout);
+			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			ll.addView(c, lp);
 			
+			Button r = new Button(this);
+			r.setText("R");
+			r.setVisibility(1);
+			ll.addView(r, lp);
 			return true;
 		default :
 			return true;
 		}
-	}*/
+	}
 	
 	
 	public void createQuestion(){
@@ -66,7 +76,7 @@ public class Villager  extends Activity{
 		Button yes = (Button) findViewById(R.id.yes_button);
 		yes.setVisibility(0);
 		Button no = (Button) findViewById(R.id.no_button);
-		no.setVisibility(1);
+		no.setVisibility(0);
 		
 	}
 	
