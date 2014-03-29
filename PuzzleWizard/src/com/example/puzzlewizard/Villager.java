@@ -1,12 +1,16 @@
 package com.example.puzzlewizard;
 
+import com.example.puzzlewizard.StateMachine.State;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MotionEventCompat;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.MotionEvent;
 import android.view.View;
@@ -34,39 +38,29 @@ public class Villager extends Activity{
 		start.setText("Wizard, could you help me solve this question?");
 		Button yes = (Button) findViewById(R.id.yes_button);
 		yes.setText("Only if you pay me.");
-//		yes.setOnTouchListener((OnTouchListener) this);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I'm too busy for this. Figure it out yourself.");
 	}
 	
-	//this can be done in model, possibly
-	//if yes is clicked, stay here
-	//if no is clicked leave
-/*	public boolean onTouchEvent(MotionEvent event)
-	{
-		int action = MotionEventCompat.getActionMasked(event);
-		
-		//fix up later
-		switch(action)
-		{
-		case (MotionEvent.ACTION_DOWN) :
-			Button c = new Button(this);
-			c.setText("C");
-			c.setVisibility(1);
-			LinearLayout ll = (LinearLayout)findViewById(R.id.puzzle_layout);
-			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-			ll.addView(c, lp);
-			
-			Button r = new Button(this);
-			r.setText("R");
-			r.setVisibility(1);
-			ll.addView(r, lp);
-			return true;
-		default :
-			return true;
-		}
+	public void endPuzzle(View view){
+		MainActivity.state.setState(State.Field);
+		Intent intent = new Intent(this, Screen.class);
+    	startActivity(intent);
 	}
-	*/
+	
+	public void startPuzzle(View view){
+		Button c = new Button(this);
+		c.setText("C");
+		c.setVisibility(1);
+		RelativeLayout ll = (RelativeLayout)findViewById(R.id.puzzle_layout);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		ll.addView(c, lp);
+		
+		Button r = new Button(this);
+		r.setText("R");
+		r.setVisibility(1);
+		ll.addView(r, lp);    	
+	}
 	
 	public void createQuestion(){
 		TextView start = (TextView) findViewById(R.id.maintext);
