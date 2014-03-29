@@ -139,7 +139,7 @@ public class Villager extends Activity{
 	
 	public void createQuestion(){
 			String newText = "";
-			double x = Math.random() * 5;
+			double x = Math.random() * 12;
 			int val = (int) x;
 			switch(val)
 			{
@@ -163,6 +163,33 @@ public class Villager extends Activity{
 				newText = "John has been hired to paint the numbers 1 through 100 on 100 apartments. How many times will he paint 8?";
 				answer = 20;
 				break;
+			case 6:
+				newText = "What temperature is approximentaly twice as hot as 0 degrees Celsius?";
+				answer = 273;
+				break;
+			case 7:
+				newText = "What is 1/2 of 2/3 of 3/4 of 4/5 of 5/6 of 6/7 of 8/9 of 9/10 of 10000?";
+				answer = 1000;
+				break;
+			case 8:
+				newText = "Six glasses are in a row. First three are full, last three empty. Minimum number of glasses to move so full and empty alternate?";
+				answer = 1;
+				break;
+			case 9:
+				newText = "What is 40 divided by 1/2, plus 15?";
+				answer = 95;
+				break;
+			case 10:
+				newText = "A toaster with 2 slots takes a minute to toast one side of a piece of bread. With 3 slices, what is min time needed to toast both sides?";
+				answer = 3;
+				break;
+			case 11:
+				newText = "A man was born Jan 1, 23 B.C. and died Jan 2, 23 A.D. What was his age?";
+				answer = 45;
+				break;
+			case 12:
+				newText = "I have two kids. The older one is a boy--what is the percent chance the younger one is also a boy?";
+				answer = 50;
 			default:
 				newText = "There are 3 switches for 3 light bulbs upstairs. How many times do you need to look to figure which switch is with which bulb?";
 				answer = 1;
@@ -188,7 +215,7 @@ public class Villager extends Activity{
 	}
 	
 	public void addHundreds(View view){
-		if(this.hundreds < 9)
+		if(this.hundreds < 10)
 			this.hundreds++;
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setText(""+hundreds);
