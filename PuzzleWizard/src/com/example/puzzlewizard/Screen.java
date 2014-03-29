@@ -10,12 +10,14 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.awt.*;
 
+import com.example.puzzlewizard.StateMachine.State;
 import com.example.puzzlewizard.User.Spell;
 
 
@@ -24,15 +26,10 @@ public class Screen extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_screen);
-		
-		//Intent i = getIntent();
-		//model = (Model)i.getSerializableExtra("model");
-		//user = (User)i.getSerializableExtra("user");
-		//user = new User();
-		
 		createHPBar();
 		createXPBar();
 		createPowers();
+		createPerson();
 		createMonster();
 	}
 	
@@ -40,6 +37,20 @@ public class Screen extends Activity{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.display_screen, menu);
 		return true;
+	}
+	
+	public void onPause(){
+		super.onPause();
+	}
+	
+	public void onResume(){
+		super.onResume();
+		if (MainActivity.state.getState() == State.PostFight){
+			ImageButton ibutton = (ImageButton) findViewById(R.id.monster);
+			ibutton.setVisibility(0);
+			ImageButton ibutton2 = (ImageButton) findViewById(R.id.person);
+			ibutton2.setEnabled(true);
+		}
 	}
 	
 	public void createHPBar(){
@@ -67,7 +78,7 @@ public class Screen extends Activity{
 	
 	@SuppressLint("NewApi") 
 	public void createMonster(){
-		Monster monster = new Monster();
+		
 		Point size = new Point();
 		getWindowManager().getDefaultDisplay().getSize(size);
 		int maxx = size.x;
@@ -90,17 +101,56 @@ public class Screen extends Activity{
 		if (x >= 600 && x <= 800 && y <= 400 && y >= 300){
 			y = 250;
 		}
-		System.out.println("x " +x + " y " +y);
-		//monster.draw(x,y);
+		ImageButton ibutton = (ImageButton) findViewById(R.id.monster);
+		ibutton.setX((float) x);
+		ibutton.setY((float) y);
+	}
+	
+	@SuppressLint("NewApi")
+	public void createPerson(){
+		Person person = new Person();
+		Point size = new Point();
+		getWindowManager().getDefaultDisplay().getSize(size);
+		int maxx = size.x;
+		int maxy = size.y;
+		double x = Math.random() * maxx -75;
+		double y = Math.random() * maxy - 100;
+		if (y > 350){
+			y = 350;
+		}
+		if (y < 50){
+			y = 50;
+		}
 		
-		ImageView image = (ImageView) findViewById(R.id.monster1);
-		/*RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(80,80);
-		params.topMargin=(int) x;
-		params.leftMargin=(int) y;*/
-		
-		image.setBackground(monster.draw(x,y));
+		if (x > 950){
+			x = 950;
+		}
+		if (x < 200){
+			x = 200;
+		}
+		if (x >= 600 && x <= 800 && y <= 400 && y >= 300){
+			y = 250;
+		}
+		ImageButton ibutton = (ImageButton) findViewById(R.id.person);
+		ibutton.setX((float) x);
+		ibutton.setY((float) y);
+	//	if (MainActivity.state.getState() == State.Field)
+		//	ibutton.setEnabled(false);
+/*		ImageView image = (ImageView) findViewById(R.id.person);
 		image.setX((float) x);
 		image.setY((float) y);
-		MainActivity.model.addMonster(monster);
+		MainActivity.model.setPerson(true);*/
+	}
+	
+	public void startFight(View view){
+		MainActivity.state.setState(State.Fight);
+		Intent intent = new Intent(this, Fight.class);
+    	startActivity(intent);
+	}
+	
+	public void startPuzzle(View view){
+		MainActivity.state.setState(State.Villager);
+		Intent intent = new Intent(this, Villager.class);
+    	startActivity(intent);
 	}
 }

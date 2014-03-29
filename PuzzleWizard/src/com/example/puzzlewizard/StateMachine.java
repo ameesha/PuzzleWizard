@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class StateMachine {
 
-	public enum State {Field, Fight, Villager, Instructions, Start};
+	public enum State {Field, Fight, Villager, PostFight, Instructions, Start};
 	private State curState = State.Start;
 	private Vector<StateListener> listeners = new Vector();
 	

@@ -54,14 +54,14 @@ public class Villager  extends Activity{
 			Button c = new Button(this);
 			c.setText("C");
 			c.setVisibility(1);
-			LinearLayout ll = (LinearLayout)findViewById(R.id.layout);
+	//		LinearLayout ll = (LinearLayout)findViewById(R.id.layout);
 			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-			ll.addView(c, lp);
+		//	ll.addView(c, lp);
 			
 			Button r = new Button(this);
 			r.setText("R");
 			r.setVisibility(1);
-			ll.addView(r, lp);
+	//		ll.addView(r, lp);
 			return true;
 		default :
 			return true;

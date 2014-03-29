@@ -1,6 +1,9 @@
 package com.example.puzzlewizard;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.support.v4.view.MotionEventCompat;
 import android.view.MotionEvent;
 
@@ -13,6 +16,7 @@ public class Person extends Activity{
 	{
 		//do nothing for now
 	}
+	
 	
 	public void setModel(Model mod)
 	{

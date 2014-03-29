@@ -1,5 +1,7 @@
 package com.example.puzzlewizard;
 
+import com.example.puzzlewizard.StateMachine.State;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,7 +16,6 @@ public class Instructions extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_instructions);
-		
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -24,6 +25,7 @@ public class Instructions extends Activity {
 	}
 	
 	public void beginGame(View view){
+		MainActivity.state.setState(State.Field);
 		Intent intent = new Intent(this, Screen.class);
 		startActivity(intent);
 	}

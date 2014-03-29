@@ -15,12 +15,21 @@ public class Model implements Serializable {
 //	private State state = State.Field;
 	User user = null;
 	private ArrayList<Monster> monsters = new ArrayList();
+	private boolean person;
 	StateMachine stateMachine = null;
 	//add array of people later
 	
 	Model(){
 		monsters.clear();
 	//	views.clear();
+	}
+	
+	public void setPerson(boolean b){
+		this.person = b;
+	}
+	
+	public boolean getPerson(){
+		return this.person;
 	}
 	
 	public void setUser(User use)

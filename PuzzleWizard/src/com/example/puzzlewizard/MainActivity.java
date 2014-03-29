@@ -1,5 +1,7 @@
 package com.example.puzzlewizard;
 
+import com.example.puzzlewizard.StateMachine.State;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +12,7 @@ public class MainActivity extends Activity {
 	
 	public static Model model;
 	public static User user;
+	public static StateMachine state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +20,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         model = new Model();
         user = new User();
+        state = new StateMachine();
     }
 
 
@@ -28,9 +32,8 @@ public class MainActivity extends Activity {
     }
     
     public void startGame(View view){
+    	state.setState(State.Instructions);
     	Intent intent = new Intent(this, Instructions.class);
-    	//intent.putExtra("model", model);
-    	//intent.putExtra("user", user);
     	startActivity(intent);
     }
     
