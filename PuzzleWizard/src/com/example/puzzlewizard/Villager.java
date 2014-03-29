@@ -55,6 +55,18 @@ public class Villager extends Activity{
 		ten.setVisibility(View.INVISIBLE);
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setVisibility(View.INVISIBLE);
+		Button oneup = (Button) findViewById(R.id.onesup_button);
+		oneup.setVisibility(View.INVISIBLE);
+		Button tenup = (Button) findViewById(R.id.tensup_button);
+		tenup.setVisibility(View.INVISIBLE);
+		Button hundredup = (Button) findViewById(R.id.hundredsup_button);
+		hundredup.setVisibility(View.INVISIBLE);
+		Button onedown = (Button) findViewById(R.id.onesdown_button);
+		onedown.setVisibility(View.INVISIBLE);
+		Button tendown = (Button) findViewById(R.id.tensdown_button);
+		tendown.setVisibility(View.INVISIBLE);
+		Button hundreddown = (Button) findViewById(R.id.hundredsdown_button);
+		hundreddown.setVisibility(View.INVISIBLE);
 		Button submit = (Button) findViewById(R.id.submit);
 		submit.setVisibility(View.INVISIBLE);
 		Button restart = (Button) findViewById(R.id.restart);
@@ -78,21 +90,51 @@ public class Villager extends Activity{
 		submit.setVisibility(View.VISIBLE);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I don't have a clue.");
+		Button oneup = (Button) findViewById(R.id.onesup_button);
+		oneup.setY(100);
+		oneup.setX(900);
+		oneup.setText("+");
+		Button tenup = (Button) findViewById(R.id.tensup_button);
+		tenup.setY(100);
+		tenup.setX(700);
+		tenup.setText("+");
+		Button hundredup = (Button) findViewById(R.id.hundredsup_button);
+		hundredup.setY(100);
+		hundredup.setX(500);
+		hundredup.setText("+");
 		Button one = (Button) findViewById(R.id.ones_button);
-		one.setY(100);
+		one.setY(200);
 		one.setX(900);
 		one.setText("0");
 		Button ten = (Button) findViewById(R.id.tens_button);
-		ten.setY(100);
+		ten.setY(200);
 		ten.setX(700);
 		ten.setText("0");
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
-		hundred.setY(100);
+		hundred.setY(200);
 		hundred.setX(500);
 		hundred.setText("0");
+		Button onedown = (Button) findViewById(R.id.onesdown_button);
+		onedown.setY(300);
+		onedown.setX(900);
+		onedown.setText("-");
+		Button tendown = (Button) findViewById(R.id.tensdown_button);
+		tendown.setY(300);
+		tendown.setX(700);
+		tendown.setText("-");
+		Button hundreddown = (Button) findViewById(R.id.hundredsdown_button);
+		hundreddown.setY(300);
+		hundreddown.setX(500);
+		hundreddown.setText("-");
 		one.setVisibility(View.VISIBLE);
 		ten.setVisibility(View.VISIBLE);
 		hundred.setVisibility(View.VISIBLE);
+		oneup.setVisibility(View.VISIBLE);
+		tenup.setVisibility(View.VISIBLE);
+		hundredup.setVisibility(View.VISIBLE);
+		onedown.setVisibility(View.VISIBLE);
+		tendown.setVisibility(View.VISIBLE);
+		hundreddown.setVisibility(View.VISIBLE);
 	}
 	
 	public void createQuestion(){
@@ -146,8 +188,29 @@ public class Villager extends Activity{
 	}
 	
 	public void addHundreds(View view){
-		if(this.hundreds < 10)
-			this.hundreds++;
+		if(this.hundreds > 0)
+			this.hundreds--;
+		Button hundred = (Button) findViewById(R.id.hundreds_button);
+		hundred.setText(""+hundreds);
+	}
+	
+	public void subOnes(View view){
+		if(this.ones > 0)
+			this.ones--;
+		Button one = (Button) findViewById(R.id.ones_button);
+		one.setText(""+ones);
+	}
+	
+	public void subTens(View view){
+		if(this.tens > 0)
+			this.tens--;
+		Button ten = (Button) findViewById(R.id.tens_button);
+		ten.setText(""+tens);
+	}
+	
+	public void subHundreds(View view){
+		if(this.hundreds > 0)
+			this.hundreds--;
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setText(""+hundreds);
 	}
@@ -163,24 +226,6 @@ public class Villager extends Activity{
 		submit.setVisibility(View.VISIBLE);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I don't have a clue.");
-		Button one = (Button) findViewById(R.id.ones_button);
-		one.setY(100);
-		one.setX(900);
-		one.setText("0");
-		Button ten = (Button) findViewById(R.id.tens_button);
-		ten.setY(100);
-		ten.setX(700);
-		ten.setText("0");
-		Button hundred = (Button) findViewById(R.id.hundreds_button);
-		hundred.setY(100);
-		hundred.setX(500);
-		hundred.setText("0");
-		one.setVisibility(View.VISIBLE);
-		ten.setVisibility(View.VISIBLE);
-		hundred.setVisibility(View.VISIBLE);
-		this.tens = 0;
-		this.ones = 0;
-		this.hundreds = 0;
 	}
 	
 	@SuppressLint("NewApi")
@@ -202,6 +247,21 @@ public class Villager extends Activity{
 			restart.setText("I'll get it this time.");
 			restart.setVisibility(view.VISIBLE);
 			restart.setY(100);
+			Button one = (Button) findViewById(R.id.ones_button);
+			one.setY(200);
+			one.setX(900);
+			one.setText("0");
+			Button ten = (Button) findViewById(R.id.tens_button);
+			ten.setY(200);
+			ten.setX(700);
+			ten.setText("0");
+			Button hundred = (Button) findViewById(R.id.hundreds_button);
+			hundred.setY(200);
+			hundred.setX(500);
+			hundred.setText("0");
+			this.tens = 0;
+			this.ones = 0;
+			this.hundreds = 0;
 		}
 	}
 	

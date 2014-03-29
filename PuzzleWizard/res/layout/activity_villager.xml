@@ -52,10 +52,35 @@
         android:layout_gravity="center"
         android:enabled="true"
         android:visible="false"
+        android:gravity="center"  />
+    <Button
+        android:id="@+id/tens_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center" />
+    <Button
+        android:id="@+id/hundreds_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"  />
+    
+    <Button
+        android:id="@+id/onesup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
         android:gravity="center"
          android:onClick="addOnes"  />
     <Button
-        android:id="@+id/tens_button"
+        android:id="@+id/tensup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -64,7 +89,7 @@
         android:gravity="center"
          android:onClick="addTens"  />
     <Button
-        android:id="@+id/hundreds_button"
+        android:id="@+id/hundredsup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -72,6 +97,35 @@
         android:visible="false"
         android:gravity="center"
          android:onClick="addHundreds"  />
+    
+    <Button
+        android:id="@+id/onesdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="subOnes"  />
+    <Button
+        android:id="@+id/tensdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="subTens"  />
+    <Button
+        android:id="@+id/hundredsdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true"
+        android:visible="false"
+        android:gravity="center"
+         android:onClick="subHundreds"  />
+    
 
     <TextView
         android:id="@+id/maintext"
