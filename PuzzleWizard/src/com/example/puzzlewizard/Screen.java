@@ -80,13 +80,16 @@ public class Screen extends Activity{
 		if (y < 10){
 			y = 10;
 		}
-		monster.draw(x,y);
-		MainActivity.model.addMonster(monster);
-		//ImageView image = (ImageView) findViewById(R.id.monster1);
+		//monster.draw(x,y);
+		
+		ImageView image = (ImageView) findViewById(R.id.monster1);
 		/*RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(80,80);
 		params.topMargin=(int) x;
-		params.leftMargin=(int) y;
+		params.leftMargin=(int) y;*/
 		
-		image.setBackground(monster.draw(x,y));*/
+		image.setBackground(monster.draw(x,y));
+		image.setX((float) x);
+		image.setY((float) y);
+		MainActivity.model.addMonster(monster);
 	}
 }

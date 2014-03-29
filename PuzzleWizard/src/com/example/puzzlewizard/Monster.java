@@ -25,9 +25,9 @@ public class Monster {
 	
 	public static ShapeDrawable draw(double x, double y){
 		ShapeDrawable shape = new ShapeDrawable(new OvalShape());
-		shape.setBounds((int)x,(int)y,20,20);
-		shape.setIntrinsicHeight(20);
-		shape.setIntrinsicWidth(30);
+		shape.setBounds((int)x,(int)y,80,90);
+		shape.setIntrinsicHeight(80);
+		shape.setIntrinsicWidth(90);
 		shape.getPaint().setColor(Color.RED);
 		return shape;
 	}

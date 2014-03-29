@@ -26,8 +26,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />
     
- <!--    <ImageView android:id="@+id/monster1" />
-   <ImageView android:id="@+id/monster2" />
+     <ImageView android:id="@+id/monster1"
+        android:layout_width="80dp"
+        android:layout_height="90dp"/>
+<!--<ImageView android:id="@+id/monster2" />
     <ImageView android:id="@+id/monster3" />
     <ImageView android:id="@+id/monster4" />
     <ImageView android:id="@+id/monster5" />
