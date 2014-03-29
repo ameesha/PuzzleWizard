@@ -36,6 +36,7 @@ public final class R {
         public static final int fight_layout=0x7f080000;
         public static final int hp=0x7f080004;
         public static final int hundreds_button=0x7f080013;
+        public static final int levels=0x7f080006;
         public static final int maintext=0x7f080014;
         public static final int monster=0x7f08000c;
         public static final int monster1=0x7f080001;
@@ -47,7 +48,6 @@ public final class R {
         public static final int person=0x7f08000b;
         public static final int puzzle_layout=0x7f08000d;
         public static final int restart=0x7f080008;
-        public static final int spell=0x7f080006;
         public static final int start_game=0x7f08000a;
         public static final int submit=0x7f080010;
         public static final int tens_button=0x7f080012;

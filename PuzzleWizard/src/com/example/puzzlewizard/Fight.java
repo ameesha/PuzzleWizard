@@ -35,6 +35,7 @@ public class Fight extends Activity{
 		}
 		createHPBar();
 		createXPBar();
+		createLevels();
 		//createPowers();
 		createMonsters();
 	}
@@ -67,7 +68,7 @@ public class Fight extends Activity{
 		xp.setText("XP: " + MainActivity.user.getXP() + "/" + MainActivity.user.getLevel()*20);
 	}
 	
-	public void createPowers(){
+	/*public void createPowers(){
 		TextView spell = (TextView) findViewById(R.id.spell);
 		spell.invalidate();
 		spell.setText(""+MainActivity.user.getCurrentSpell());
@@ -76,6 +77,12 @@ public class Fight extends Activity{
 		}
 		else
 			spell.setTextColor(Color.BLACK);
+	}*/
+	
+	public void createLevels(){
+		TextView levels = (TextView) findViewById(R.id.levels);
+		levels.invalidate();
+		levels.setText("Level: " + MainActivity.user.getLevel());
 	}
 	
 	@SuppressLint("NewApi")

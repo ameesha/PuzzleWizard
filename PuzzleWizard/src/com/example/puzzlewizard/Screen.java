@@ -30,6 +30,7 @@ public class Screen extends Activity{
 		createHPBar();
 		createXPBar();
 		//createPowers();
+		createLevels();
 		createPerson();
 		createMonster();
 	}
@@ -57,6 +58,7 @@ public class Screen extends Activity{
 		createHPBar();
 		createXPBar();
 		//createPowers();
+		createLevels();
 	}
 	
 	public void createHPBar(){
@@ -71,7 +73,7 @@ public class Screen extends Activity{
 		xp.setText("XP: " + MainActivity.user.getXP() + "/" + MainActivity.user.getLevel()*20);
 	}
 	
-	public void createPowers(){
+	/*public void createPowers(){
 		TextView spell = (TextView) findViewById(R.id.spell);
 		spell.invalidate();
 		spell.setText(""+MainActivity.user.getCurrentSpell());
@@ -80,6 +82,12 @@ public class Screen extends Activity{
 		}
 		else
 			spell.setTextColor(Color.BLACK);
+	}*/
+	
+	public void createLevels(){
+		TextView levels = (TextView) findViewById(R.id.levels);
+		levels.invalidate();
+		levels.setText("Level: " + MainActivity.user.getLevel());
 	}
 	
 	@SuppressLint("NewApi") 
