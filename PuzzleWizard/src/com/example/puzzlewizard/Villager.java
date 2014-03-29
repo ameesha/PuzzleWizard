@@ -55,6 +55,8 @@ public class Villager extends Activity{
 		ten.setVisibility(View.INVISIBLE);
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setVisibility(View.INVISIBLE);
+		Button submit = (Button) findViewById(R.id.submit);
+		submit.setVisibility(View.INVISIBLE);
 	}
 	
 	public void endPuzzle(View view){
@@ -67,24 +69,24 @@ public class Villager extends Activity{
 	public void beginPuzzle(View view){
 		this.createQuestion();
 		Button yes = (Button) findViewById(R.id.yes_button);
-		yes.setVisibility(view.INVISIBLE);
+		yes.setVisibility(View.INVISIBLE);
 		Button submit = (Button) findViewById(R.id.submit);
 		submit.setText("My answer is perfect.");
 		submit.setY(100);
-		submit.setVisibility(view.VISIBLE);
+		submit.setVisibility(View.VISIBLE);
 		Button no = (Button) findViewById(R.id.no_button);
 		no.setText("I don't have a clue.");
 		Button one = (Button) findViewById(R.id.ones_button);
 		one.setY(100);
-		one.setX(400);
+		one.setX(300);
 		one.setText("0");
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setY(100);
-		ten.setX(450);
+		ten.setX(350);
 		ten.setText("0");
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setY(100);
-		hundred.setX(500);
+		hundred.setX(400);
 		hundred.setText("0");
 		one.setVisibility(View.VISIBLE);
 		ten.setVisibility(View.VISIBLE);
@@ -92,7 +94,7 @@ public class Villager extends Activity{
 	}
 	
 	private void createQuestion(){
-		if(this.answer != -1)
+		if(this.answer == -1)
 		{
 			String newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
 			answer = 1;
