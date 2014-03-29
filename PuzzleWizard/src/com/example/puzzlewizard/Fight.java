@@ -193,6 +193,16 @@ public class Fight extends Activity{
 			final RelativeLayout rel = (RelativeLayout) findViewById(R.id.fight_layout);
 			rel.setBackground(getResources().getDrawable(R.drawable.fight_lightning));
 			
+			ImageButton ib = (ImageButton) findViewById(R.id.monster1);
+			TextView textView = new TextView(getApplicationContext());
+			textView.setText("-" + MainActivity.user.damage + "HP");
+			textView.setTextColor(Color.RED);
+			textView.setTextSize(60);
+			textView.setX(ib.getX());
+			textView.setY(ib.getY()-20);
+			System.out.println("x is at " + textView.getX() + " and y is at " + textView.getY());;
+			textView.setVisibility(View.VISIBLE);
+			
 			/*new CountDownTimer(1000,1000){
 				public void onFinish(){
 					rel.setBackground(getResources().getDrawable(R.drawable.fight_background));
@@ -209,6 +219,7 @@ public class Fight extends Activity{
 				numEnemies = numEnemies-1;
 				MainActivity.user.setXP(MainActivity.user.getXP()+MainActivity.model.monsters.get(0).getXP());
 				createXPBar();
+				
 				if (numEnemies == 0){
 					MainActivity.state.setState(State.PostFight);
 					rel.setBackground(getResources().getDrawable(R.drawable.fight_background));
