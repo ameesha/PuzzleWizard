@@ -35,7 +35,7 @@ public class Fight extends Activity{
 		}
 		createHPBar();
 		createXPBar();
-		createPowers();
+		//createPowers();
 		createMonsters();
 	}
 	

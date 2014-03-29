@@ -29,7 +29,7 @@ public class Screen extends Activity{
 		setContentView(R.layout.activity_screen);
 		createHPBar();
 		createXPBar();
-		createPowers();
+		//createPowers();
 		createPerson();
 		createMonster();
 	}
@@ -56,7 +56,7 @@ public class Screen extends Activity{
 		}
 		createHPBar();
 		createXPBar();
-		createPowers();
+		//createPowers();
 	}
 	
 	public void createHPBar(){
