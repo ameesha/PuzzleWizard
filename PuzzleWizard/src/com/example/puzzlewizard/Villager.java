@@ -82,18 +82,18 @@ public class Villager extends Activity{
 		one.setText("0");
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setY(100);
-		ten.setX(350);
+		ten.setX(400);
 		ten.setText("0");
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setY(100);
-		hundred.setX(400);
+		hundred.setX(500);
 		hundred.setText("0");
 		one.setVisibility(View.VISIBLE);
 		ten.setVisibility(View.VISIBLE);
 		hundred.setVisibility(View.VISIBLE);
 	}
 	
-	private void createQuestion(){
+	public void createQuestion(){
 		if(this.answer == -1)
 		{
 			String newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
@@ -130,6 +130,18 @@ public class Villager extends Activity{
 			TextView start = (TextView) findViewById(R.id.maintext);
 			start.invalidate();
 			start.setText(newText);
+		}
+		else if(answer != 1)
+		{
+			TextView start = (TextView) findViewById(R.id.maintext);
+			start.invalidate();
+			start.setText("so you aren't -1? " + answer);
+		}
+		else
+		{
+			TextView start = (TextView) findViewById(R.id.maintext);
+			start.invalidate();
+			start.setText("why are you not a question?" + answer);
 		}
 			
 	}
