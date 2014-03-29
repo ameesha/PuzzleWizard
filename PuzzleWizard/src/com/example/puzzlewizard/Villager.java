@@ -80,15 +80,15 @@ public class Villager extends Activity{
 		no.setText("I don't have a clue.");
 		Button one = (Button) findViewById(R.id.ones_button);
 		one.setY(100);
-		one.setX(300);
+		one.setX(700);
 		one.setText("0");
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setY(100);
-		ten.setX(400);
+		ten.setX(550);
 		ten.setText("0");
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setY(100);
-		hundred.setX(500);
+		hundred.setX(400);
 		hundred.setText("0");
 		one.setVisibility(View.VISIBLE);
 		ten.setVisibility(View.VISIBLE);
@@ -147,7 +147,7 @@ public class Villager extends Activity{
 	}
 	
 	public void addHundreds(View view){
-		if(this.tens < 10)
+		if(this.hundreds < 10)
 			this.hundreds++;
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setText(""+hundreds);
