@@ -174,21 +174,21 @@ public class Villager extends Activity{
 	}
 	
 	public void addOnes(View view){
-		if(this.ones < 10)
+		if(this.ones < 9)
 			this.ones++;
 		Button one = (Button) findViewById(R.id.ones_button);
 		one.setText(""+ones);
 	}
 	
 	public void addTens(View view){
-		if(this.tens < 10)
+		if(this.tens < 9)
 			this.tens++;
 		Button ten = (Button) findViewById(R.id.tens_button);
 		ten.setText(""+tens);
 	}
 	
 	public void addHundreds(View view){
-		if(this.hundreds < 10)
+		if(this.hundreds < 9)
 			this.hundreds++;
 		Button hundred = (Button) findViewById(R.id.hundreds_button);
 		hundred.setText(""+hundreds);
@@ -246,6 +246,7 @@ public class Villager extends Activity{
 			Button restart = (Button) findViewById(R.id.restart);
 			restart.setText("I'll get it this time.");
 			restart.setVisibility(view.VISIBLE);
+			restart.setY(100);
 			this.tens = 0;
 			this.ones = 0;
 			this.hundreds = 0;
