@@ -86,12 +86,16 @@ public class Villager extends Activity{
 		hundred.setY(100);
 		hundred.setX(500);
 		hundred.setText("0");
+		one.setVisibility(View.VISIBLE);
+		ten.setVisibility(View.VISIBLE);
+		hundred.setVisibility(View.VISIBLE);
 	}
 	
 	private void createQuestion(){
 		if(this.answer != -1)
 		{
-			String newText = "";
+			String newText = "There are 3 switches downstairs corresponding to one of the light bulbs upstairs. What is the least amount of trips you need to make to figure out which light bublb belongs to which switch?";
+			answer = 1;
 			double x = Math.random() * 5;
 			int val = (int) x;
 			switch(val)
